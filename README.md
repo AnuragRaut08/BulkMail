@@ -44,8 +44,8 @@ Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Ca
 
 ### 🔹 1. Clone the Repository  
 ```bash
-git clone https://github.com/yourusername/bulk-gmail-creator.git
-cd bulk-gmail-creator
+git clone https://github.com/AnuragRaut08/bulkmail.git
+cd bulkmail
 ```
 
 ### 🔹 2. Create a Virtual Environment (Recommended)  
