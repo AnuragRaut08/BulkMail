@@ -1,7 +1,6 @@
-# 🚀 BulkMail:Bulk Gmail Account Creator
+# 🚀 BulkMail: Bulk Gmail Account Creator
 
-Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Captcha, SMS-Activate, and Webshare proxies.
-
+Automate **Gmail account creation** using Selenium, `undetected_chromedriver`, 2Captcha, SMS-Activate, and Webshare proxies.
 
 ---
 
@@ -12,6 +11,9 @@ Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Ca
 ✅ **Phone Number Verification** – Uses **SMS-Activate API**.  
 ✅ **Rotating Proxies** – Fetches fresh proxies from **Webshare**.  
 ✅ **Headless Mode Support** – Run without opening a browser.  
+✅ **Session Handling** – Stores cookies to maintain login state.  
+✅ **Failure Handling & Retries** – Ensures CAPTCHA solving & OTP requests are retried.  
+✅ **Data Storage** – Saves created accounts in **CSV format**.
 
 ---
 
@@ -118,7 +120,24 @@ rm -rf C:\Users\YourUsername\AppData\Roaming\undetected_chromedriver
 🔹 **Reason:** No available phone numbers.  
 🔹 **Fix:** Use a different **country code** in `SMS-Activate` API settings.  
 
+---
 
+## 📊 **Account Storage Format**
+
+The successfully created accounts are stored in `accounts.csv` in the following format:
+
+| Email Address | Password | Phone Number | Proxy IP | Creation Timestamp |
+|--------------|----------|--------------|----------|---------------------|
+| example@gmail.com | Password123 | +6281234567890 | 192.168.1.1 | 2024-04-01 10:00:00 |
+
+---
+
+## 📄 **Additional Notes**
+
+### ✅ Best Practices
+- Use **rotating proxies** to avoid IP bans.
+- Implement **random delays** between actions to mimic human behavior.
+- **Test thoroughly** before running bulk operations.
 
 ---
 
@@ -126,4 +145,8 @@ rm -rf C:\Users\YourUsername\AppData\Roaming\undetected_chromedriver
 Developed by **Anurag Raut**  
 📧 Email: anuragtraut2003@gmail.com  
 🔗 GitHub: [AnuragRaut08](https://github.com/AnuragRaut08)  
+
+---
+
+### 🚀 **Ready to scale? Automate Gmail account creation now!**
 
