@@ -1,19 +1,11 @@
+# 🚀 BulkMail:Bulk Gmail Account Creator
 
+Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Captcha, SMS-Activate, and Webshare proxies.
 
-```markdown
-# 🚀 Bulk Gmail Account Creator  
-
-Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Captcha, SMS-Activate, and Webshare proxies.  
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg" alt="Python 3.9+">
-  <img src="https://img.shields.io/badge/selenium-automated-red.svg" alt="Selenium Automation">
-  <img src="https://img.shields.io/badge/status-active-brightgreen.svg" alt="Project Status">
-</p>
 
 ---
 
-## 📌 Features  
+## 📌 Features
 ✅ **Automated Gmail Account Creation** – Fully hands-free process.  
 ✅ **Bypass Google’s Bot Detection** – Uses `undetected_chromedriver`.  
 ✅ **CAPTCHA Solving** – Integrates **2Captcha API** for solving CAPTCHAs.  
@@ -23,62 +15,70 @@ Automate **Gmail account creation** using Selenium, undetected_chromedriver, 2Ca
 
 ---
 
-## 📂 Project Structure  
+## 📂 Project Structure
 ```
 📦 bulk-gmail-creator  
- ┣ 📂 assets/                     # Contains necessary assets (optional)  
- ┣ 📂 logs/                       # Stores log files  
- ┣ 📂 src/                        # Main source code  
- ┃ ┣ 📜 main.py                   # Script entry point  
- ┃ ┣ 📜 captcha_solver.py         # Handles 2Captcha API integration  
- ┃ ┣ 📜 sms_verification.py       # Handles SMS verification  
- ┃ ┣ 📜 proxy_manager.py          # Manages rotating proxies  
- ┣ 📜 .env.example                # Sample environment variables file  
- ┣ 📜 requirements.txt            # Dependencies  
+ ┣ 📂 __pycache__/               # Compiled Python files  
+ ┣ 📂 venv/                      # Virtual environment (optional)  
+ ┣ 📜 .env                       # Environment variables (not committed)  
+ ┣ 📜 account_creation.log        # Log file for tracking activity  
+ ┣ 📜 accounts.csv                # CSV file storing created accounts  
+ ┣ 📜 accounts.json               # JSON file storing created accounts  
+ ┣ 📜 captcha_solver.py           # Handles CAPTCHA solving via 2Captcha  
+ ┣ 📜 config.py                   # Configurations and settings  
+ ┣ 📜 gmail_creator.py            # Main Gmail account creator logic  
+ ┣ 📜 main.py                     # Script entry point  
+ ┣ 📜 phone_verifier.py           # Handles phone verification via SMS-Activate  
+ ┣ 📜 proxy_manager.py            # Manages rotating proxies  
+ ┣ 📜 session_handler.py          # Handles browser session management  
+ ┣ 📜 stealth.py                  # Implements stealth mode for automation  
+ ┣ 📜 storage.py                  # Handles data storage and retrieval  
+ ┣ 📜 utils.py                    # Utility functions  
  ┣ 📜 README.md                   # Project documentation  
+ ┣ 📜 requirements.txt            # Dependencies  
 ```
 
 ---
 
-## ⚙️ **Installation & Setup**  
+## ⚙️ **Installation & Setup**
 
-### 🔹 1. Clone the Repository  
+### 🔹 1. Clone the Repository
 ```bash
-git clone https://github.com/AnuragRaut08/bulkmail.git
-cd bulkmail
+git clone https://github.com/AnuragRaut08/BulkMail.git
+cd BulkMail
 ```
 
-### 🔹 2. Create a Virtual Environment (Recommended)  
+### 🔹 2. Create a Virtual Environment (Recommended)
 ```bash
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 venv\Scripts\activate     # Windows
 ```
 
-### 🔹 3. Install Dependencies  
+### 🔹 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 🔹 4. Configure API Keys & Credentials  
-Create a `.env` file in the root directory and add:  
+### 🔹 4. Configure API Keys & Credentials
+Create a `.env` file in the root directory and add:
 ```ini
 2CAPTCHA_API_KEY=your_2captcha_api_key
 SMS_ACTIVATE_API_KEY=your_sms_activate_api_key
 WEBSHARE_PROXY_KEY=your_webshare_proxy_key
 ```
-Replace `your_2captcha_api_key`, `your_sms_activate_api_key`, and `your_webshare_proxy_key` with actual API keys.  
+Replace `your_2captcha_api_key`, `your_sms_activate_api_key`, and `your_webshare_proxy_key` with actual API keys.
 
 ---
 
-## 🏃 **Usage**  
+## 🏃 **Usage**
 
-### 🔥 **Run the Script**  
+### 🔥 **Run the Script**
 ```bash
-python src/main.py
+python main.py
 ```
 
-### 🎯 **What Happens?**  
+### 🎯 **What Happens?**
 ✔️ Random **Gmail usernames** are generated.  
 ✔️ **CAPTCHA** is solved automatically via **2Captcha**.  
 ✔️ **Phone verification** is completed via **SMS-Activate**.  
@@ -86,9 +86,9 @@ python src/main.py
 
 ---
 
-## 🔧 **Troubleshooting Guide**  
+## 🔧 **Troubleshooting Guide**
 
-### ❌ **1. [WinError 32] The process cannot access the file**  
+### ❌ **1. [WinError 32] The process cannot access the file**
 🔹 **Reason:** `chromedriver.exe` is already running.  
 🔹 **Fix:**  
 - Open Task Manager (`Ctrl + Shift + Esc`) → **End `chromedriver.exe`**.  
@@ -97,13 +97,13 @@ python src/main.py
   C:\Users\YourUsername\AppData\Roaming\undetected_chromedriver
   ```
 
-### ❌ **2. [WinError 183] Cannot create a file that already exists**  
+### ❌ **2. [WinError 183] Cannot create a file that already exists**
 🔹 **Fix:**  
 ```bash
 rm -rf C:\Users\YourUsername\AppData\Roaming\undetected_chromedriver
 ```
 
-### ❌ **3. Chromedriver Not Launching**  
+### ❌ **3. Chromedriver Not Launching**
 🔹 **Fix:**  
 - Update Chrome:  
   ```bash
@@ -114,27 +114,16 @@ rm -rf C:\Users\YourUsername\AppData\Roaming\undetected_chromedriver
   pip install --upgrade undetected-chromedriver
   ```
 
-### ❌ **4. SMS Verification Failing**  
+### ❌ **4. SMS Verification Failing**
 🔹 **Reason:** No available phone numbers.  
 🔹 **Fix:** Use a different **country code** in `SMS-Activate` API settings.  
 
----
 
-## 📜 **License**  
-This project is for educational purposes only. **Use responsibly.**  
 
 ---
 
-## 👨‍💻 **Author**  
-Developed by [Your Name](https://github.com/yourusername).  
-```
+## 👨‍💻 **Author**
+Developed by **Anurag Raut**  
+📧 Email: anuragtraut2003@gmail.com  
+🔗 GitHub: [AnuragRaut08](https://github.com/AnuragRaut08)  
 
----
-
-### 🔥 **Why Is This README Fully Optimized?**
-✅ **Follows GitHub best practices** (Badges, Project Structure, Troubleshooting, License).  
-✅ **Copy-paste ready** – No unnecessary details, only what’s needed.  
-✅ **Easy to read & navigate** – Proper sections, clear instructions.  
-✅ **Looks professional** – Uses Markdown formatting for readability.  
-
-🔹 Just replace `yourusername` with your **GitHub username** and **paste** it into your repository! 🚀
